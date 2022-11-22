@@ -24,7 +24,11 @@ window.addEventListener('DOMContentLoaded', () => {
   start.addEventListener('click', function (e) {
     document.querySelector('#quizBlock').style.display = 'block';
     start.style.display = 'none';
+    countDown();
   });
+  const submitButton = document.getElementById("btnSubmit")
+  const resetButton = document.getElementById("btnReset")
+  const scoreSpan = document.getElementById("score")
   // quizArray QUESTIONS & ANSWERS
   // q = QUESTION, o = OPTIONS, a = CORRECT ANSWER
   // Basic ideas from https://code-boxx.com/simple-javascript-quiz/
@@ -84,49 +88,61 @@ window.addEventListener('DOMContentLoaded', () => {
         liElement = document.querySelector('#' + li);
         radioElement = document.querySelector('#' + r);
 
-        if (quizItem.a == i) {
-          
-          //change background color of li element here
-        }
-
         if (radioElement.checked) {
-          // code for task 1 goes here
-          addEventListener('submit', (event) => {});
-          let score === i
-          function sum()
+
+          if(quizItem.a == i) {
+            score++
+            liElement.style.backgroundColor = "green"
+          } else {
+            liElement.style.backgroundColor = "red"
+          }
+            //mine
+          //addEventListener('submit', (event) => {});
+          //let score === i
+          //function sum()
           }
         }
       }
+      scoreSpan.innerHTML = `Your score is: ${score}/5`
     });
-  };
 
- 
+  const countDown = () => {
+    let secounds = 60
+    let timer = setInterval(myTimer, 1000)
+    function myTimer(){
+      document.getElementById("time").innerHTML = `${seconds} seconds`
+      seconds--
+      if (seconds === -1){
+        clearInterval(timer)
+        calculateScore()
 
+        alert(`Times up!`)
+      }
+    }
+  }
+
+    const resetPage = () => {
+      window.location.reload();
+    }
+  submitButton.addEventListener("click", ()==>calculateScore())
+  resetButton.addEventListener("click", ()==>resetPage())
   // call the displayQuiz function
-  displayQuiz();
-
-  document.getElementById("btnReset").addEventListener("click", reload);
-  window.location.reload();
-  
-  function logReset(event) {
-  
+  displayQuiz(); 
 }
 
-const form = document.getElementById('form');
-const log = document.getElementById('log');
-form.addEventListener('reset', logReset);
-});
+// const form = document.getElementById('form');
+// const log = document.getElementById('log');
+// form.addEventListener('reset', logReset);
+// });
 
 
 
-setInterval(myFunction, 1000);
+// setInterval(myFunction, 1000);
 
-function myFunction() {
-  let d = new Date();
-  document.getElementById("time").innerHTML=
-  d.getHours() + ":" +
-  d.getMinutes() + ":" +
-  d.getSeconds();
-}
-
-
+// function myFunction() {
+//   let d = new Date();
+//   document.getElementById("time").innerHTML=
+//   d.getHours() + ":" +
+//   d.getMinutes() + ":" +
+//   d.getSeconds();
+// }

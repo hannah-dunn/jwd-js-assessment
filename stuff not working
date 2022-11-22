@@ -41,3 +41,8 @@ function startTime() {
   document.getElementById("time").innerHTML = date.toLocaleTimeString();
   setTimeout(function() {startTime()}, 1000);
 }
+
+document.getElementById("btnReset").addEventListener("click", reload);
+window.location.reload();
+
+function logReset(event) {
