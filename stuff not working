@@ -46,3 +46,20 @@ document.getElementById("btnReset").addEventListener("click", reload);
 window.location.reload();
 
 function logReset(event) {
+
+  // const form = document.getElementById('form');
+// const log = document.getElementById('log');
+// form.addEventListener('reset', logReset);
+// });
+
+
+
+// setInterval(myFunction, 1000);
+
+// function myFunction() {
+//   let d = new Date();
+//   document.getElementById("time").innerHTML=
+//   d.getHours() + ":" +
+//   d.getMinutes() + ":" +
+//   d.getSeconds();
+// }

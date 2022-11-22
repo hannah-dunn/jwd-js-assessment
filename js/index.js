@@ -1,10 +1,6 @@
 /* ***************************
   JWD JavaScript Assessment
-
-  This code is unfinished. You will need to study it to figure out what it does. Then you will need to use this and
-  your own code, to finish the app. 
-  
-  The tasks you need to do are below.
+something is not working 
 
     TASKS TODO:
       1. Calculate the score as the total of the number of correct answers
@@ -26,9 +22,9 @@ window.addEventListener('DOMContentLoaded', () => {
     start.style.display = 'none';
     countDown();
   });
-  const submitButton = document.getElementById("btnSubmit")
-  const resetButton = document.getElementById("btnReset")
-  const scoreSpan = document.getElementById("score")
+  const submitButton = document.getElementById("btnSubmit");
+  const resetButton = document.getElementById("btnReset");
+  const scoreSpan = document.getElementById("score");
   // quizArray QUESTIONS & ANSWERS
   // q = QUESTION, o = OPTIONS, a = CORRECT ANSWER
   // Basic ideas from https://code-boxx.com/simple-javascript-quiz/
@@ -91,58 +87,37 @@ window.addEventListener('DOMContentLoaded', () => {
         if (radioElement.checked) {
 
           if(quizItem.a == i) {
-            score++
-            liElement.style.backgroundColor = "green"
+            score++;
+            liElement.style.backgroundColor = "green";
           } else {
-            liElement.style.backgroundColor = "red"
+            liElement.style.backgroundColor = "red";
           }
-            //mine
-          //addEventListener('submit', (event) => {});
-          //let score === i
-          //function sum()
           }
         }
       }
-      scoreSpan.innerHTML = `Your score is: ${score}/5`
-    });
+      scoreSpan.innerHTML = `Your score is: ${score}/5`;
+    };
 
   const countDown = () => {
-    let secounds = 60
-    let timer = setInterval(myTimer, 1000)
+    let secounds = 60;
+    let timer = setInterval(myTimer, 1000);
     function myTimer(){
-      document.getElementById("time").innerHTML = `${seconds} seconds`
-      seconds--
+      document.getElementById("time").innerHTML = `${seconds} seconds`;
+      seconds--;
       if (seconds === -1){
-        clearInterval(timer)
-        calculateScore()
+        clearInterval(timer);
+        calculateScore();
 
-        alert(`Times up!`)
+        alert(`Times up!`);
       }
     }
   }
 
     const resetPage = () => {
       window.location.reload();
-    }
-  submitButton.addEventListener("click", ()==>calculateScore())
-  resetButton.addEventListener("click", ()==>resetPage())
+    };
+  submitButton.addEventListener("click", ()==>calculateScore());
+  resetButton.addEventListener("click", ()==>resetPage());
   // call the displayQuiz function
-  displayQuiz(); 
-}
-
-// const form = document.getElementById('form');
-// const log = document.getElementById('log');
-// form.addEventListener('reset', logReset);
-// });
-
-
-
-// setInterval(myFunction, 1000);
-
-// function myFunction() {
-//   let d = new Date();
-//   document.getElementById("time").innerHTML=
-//   d.getHours() + ":" +
-//   d.getMinutes() + ":" +
-//   d.getSeconds();
-// }
+  displayQuiz();
+});
