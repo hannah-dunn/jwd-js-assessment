@@ -92,7 +92,9 @@ window.addEventListener('DOMContentLoaded', () => {
         if (radioElement.checked) {
           // code for task 1 goes here
           addEventListener('submit', (event) => {});
-
+          let score === i
+          function sum()
+          }
         }
       }
     });
